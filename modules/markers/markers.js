@@ -150,9 +150,6 @@ export const MarkerSystem = {
     }
 };
 
-
-import { CfxAuth } from './CfxAuth.js';
-
 export class CfxMarker {
     constructor(id) {
         this.id = id;
