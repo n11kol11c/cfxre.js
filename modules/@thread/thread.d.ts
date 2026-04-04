@@ -15,7 +15,7 @@ export type ThreadCallback = () => ThreadResult;
 /**
  * Custom High-Performance Asynchronous Thread Wrapper.
  * Provides a managed execution loop for continuous tasks within the Cfx.re environment.
- * * @param f - The task to be executed. Returning `false` terminates the loop. 
+ * @param f - The task to be executed. Returning `false` terminates the loop. 
  * Returning a `number` sets a custom delay for the next iteration.
  * @param ms - Default idle time (tick rate) between iterations in milliseconds. Defaults to 0.
  * @returns A promise that resolves when the loop is manually terminated.
