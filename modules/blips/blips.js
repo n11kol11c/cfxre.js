@@ -1,24 +1,14 @@
-/**
- * Creates a highly customizable blip on the map.
- * Supports standard coordinates, radius zones, and entity-attached tracking.
- * * @param {string} id - Unique identifier for the blip (used for updates/removal).
- * @param {object} config - Configuration object for the blip.
- * @param {object} [config.coords] - Vector3 coordinates {x, y, z}.
- * @param {number} [config.entity] - Network ID or Entity Handle to attach the blip to.
- * @param {number} [config.sprite] - The icon ID (e.g., 1 for circle, 357 for garage).
- * @param {number} [config.color] - Blip color ID (e.g., 3 for blue, 1 for red).
- * @param {string} [config.label] - The text label shown on the map.
- * @param {number} [config.scale] - Size of the blip (default 0.8).
- * @param {boolean} [config.route] - If true, draws a GPS path to the blip.
- * @param {number} [config.radius] - If set, creates an area circle instead of an icon.
- * @returns {number} The handle of the created blip.
-*/
+/** @type {import('./blips').BlipsModule} */
 const Blips = {
     activeBlips: new Map(),
 
+    /** * @param {string} id 
+     * @param {import('./blips').BlipConfig} config
+     * @returns {number}
+     */
     create(id, config) {
         const { 
-            coords, 
+            coords = { x: 0, y: 0, z: 0 }, 
             entity = null, 
             sprite = 1, 
             color = 0, 
@@ -40,12 +30,14 @@ const Blips = {
 
         if (entity && DoesEntityExist(entity)) {
             blip = AddBlipForEntity(entity);
-        } else if (radius) {
+        } else if (radius && coords) {
             blip = AddBlipForRadius(coords.x, coords.y, coords.z, radius);
             SetBlipAlpha(blip, 128);
-        } else {
+        } else if (coords) {
             blip = AddBlipForCoord(coords.x, coords.y, coords.z);
         }
+
+        if (!blip) return 0;
 
         SetBlipSprite(blip, sprite);
         SetBlipDisplay(blip, display);
@@ -53,9 +45,9 @@ const Blips = {
         SetBlipColour(blip, color);
         SetBlipAlpha(blip, alpha);
         SetBlipAsShortRange(blip, shortRange);
-        
         SetBlipPriority(blip, priority);
         SetBlipCategory(blip, category);
+        
         if (bright) SetBlipBright(blip, true);
 
         if (route) {
@@ -76,25 +68,38 @@ const Blips = {
         return blip;
     },
 
+    /** * @param {string} id 
+     * @param {import('./blips').Vector3} newCoords 
+     */
     updateCoords(id, newCoords) {
         const blip = this.activeBlips.get(id);
         if (blip) SetBlipCoords(blip, newCoords.x, newCoords.y, newCoords.z);
     },
 
+    /** * @param {string} id 
+     * @param {number} displayType 
+     */
     setDisplay(id, displayType) {
         const blip = this.activeBlips.get(id);
         if (blip) SetBlipDisplay(blip, displayType); 
     },
 
+    /** * @param {string} id 
+     * @param {number} rotation 
+     */
     setRotation(id, rotation) {
         const blip = this.activeBlips.get(id);
         if (blip) SetBlipRotation(blip, Math.ceil(rotation));
     },
 
+    /** @param {string} id */
     exists(id) {
-        return this.activeBlips.has(id) && DoesBlipExist(this.activeBlips.get(id));
+        const blip = this.activeBlips.get(id);
+        if (blip === undefined) return false;
+        return this.activeBlips.has(id) && DoesBlipExist(blip);
     },
 
+    /** @param {string} prefix */
     removeByPrefix(prefix) {
         for (const [id, blip] of this.activeBlips.entries()) {
             if (id.startsWith(prefix)) {
@@ -104,9 +109,10 @@ const Blips = {
         }
     },
 
+    /** @param {string} id */
     remove(id) {
-        if (this.activeBlips.has(id)) {
-            const blip = this.activeBlips.get(id);
+        const blip = this.activeBlips.get(id);
+        if (blip) {
             if (DoesBlipExist(blip)) RemoveBlip(blip);
             this.activeBlips.delete(id);
         }
@@ -119,3 +125,5 @@ const Blips = {
         this.activeBlips.clear();
     }
 };
+
+export { Blips };
