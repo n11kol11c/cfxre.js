@@ -1,0 +1,22 @@
+{
+  "name": "cfxre",
+  "version": "1.0.0",
+  "main": "cfxjs.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "npxbuild": "esbuild modules/index.ts --bundle --outfile=dist/bundle.js --platform=node --target=node16"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@citizenfx/client": "^2.0.27722-1",
+    "@citizenfx/server": "^2.0.27722-1",
+    "@types/node": "^25.5.2",
+    "esbuild": "^0.28.0"
+  }
+}
