@@ -2,7 +2,8 @@
 const Blips = {
     activeBlips: new Map(),
 
-    /** * @param {string} id 
+    /**
+     * @param {string} id 
      * @param {import('./blips').BlipConfig} config
      * @returns {number}
      */
@@ -68,7 +69,8 @@ const Blips = {
         return blip;
     },
 
-    /** * @param {string} id 
+    /** 
+     * @param {string} id 
      * @param {import('./blips').Vector3} newCoords 
      */
     updateCoords(id, newCoords) {
@@ -76,7 +78,8 @@ const Blips = {
         if (blip) SetBlipCoords(blip, newCoords.x, newCoords.y, newCoords.z);
     },
 
-    /** * @param {string} id 
+    /** 
+     * @param {string} id 
      * @param {number} displayType 
      */
     setDisplay(id, displayType) {
@@ -84,7 +87,8 @@ const Blips = {
         if (blip) SetBlipDisplay(blip, displayType); 
     },
 
-    /** * @param {string} id 
+    /** 
+     * @param {string} id 
      * @param {number} rotation 
      */
     setRotation(id, rotation) {
