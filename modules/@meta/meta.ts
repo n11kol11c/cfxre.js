@@ -1,5 +1,4 @@
 import { ErrorType } from "@exception/errors";
-
 let versionCache: string = "1.0.0";
 let authorCache: string = "Matija";
 
