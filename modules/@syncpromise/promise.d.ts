@@ -61,4 +61,4 @@ export interface CfxPromiseModule {
 /**
  * Global instance of the Promise and Time utility module.
  */
-export const CfxPromise: CfxPromiseModule;
+export declare const CfxPromise: CfxPromiseModule;
