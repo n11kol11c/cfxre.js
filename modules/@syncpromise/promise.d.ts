@@ -1,4 +1,6 @@
-// modules/utils/promise.d.ts
+// @file promise.d.ts
+// @autor Matija
+// @versiopn 1.0.0
 
 /**
  * Callback function to terminate an active loop.
