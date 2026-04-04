@@ -6,17 +6,17 @@
 <hr>
 <p align="center">
   <img src="https://img.shields.io/badge/Version-1.0.0-green?style=flat" alt="Version 1.0.0" />
-  <a href="https://github.com/n11kol11c/cfx.js/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/n11kol11c/cfx.js?style=flat" alt="License" />
+  <a href="https://github.com/n11kol11c/cfxre.js/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/n11kol11c/cfxre.js?style=flat" alt="License" />
   </a>
   <a href="https://github.com/n11kol11c/cfx.js/stargazers">
-    <img src="https://img.shields.io/github/stars/n11kol11c/cfx.js?style=flat&color=yellow&label=Stars" alt="GitHub stars" />
+    <img src="https://img.shields.io/github/stars/n11kol11c/cfxre.js?style=flat&color=yellow&label=Stars" alt="GitHub stars" />
   </a>
   <a href="https://github.com/n11kol11c/cfx.js/issues">
-    <img src="https://img.shields.io/github/issues/n11kol11c/cfx.js?style=flat&color=red&label=Issues" alt="GitHub issues" />
+    <img src="https://img.shields.io/github/issues/n11kol11c/cfxre.js?style=flat&color=red&label=Issues" alt="GitHub issues" />
   </a>
   <a href="https://github.com/n11kol11c/cfx.js/network/members">
-    <img src="https://img.shields.io/github/forks/n11kol11c/cfx.js?style=flat&color=teal&label=Forks" alt="GitHub forks" />
+    <img src="https://img.shields.io/github/forks/n11kol11c/cfxre.js?style=flat&color=teal&label=Forks" alt="GitHub forks" />
   </a>
   <br />
   <img src="https://img.shields.io/badge/Author-n11kol11c-blue?style=flat" alt="Author" />
