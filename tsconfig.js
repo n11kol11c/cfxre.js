@@ -18,7 +18,8 @@
       // !important ./
       "@modules/*": ["./modules/*"],
       // "@blips/*": ["./modules/blips/*"],
-      "@cfxtypes": ["./cfxtypes"]
+      "@cfxtypes": ["./cfxtypes"],
+      "@exception/*": ["./error/*"]
     }
   },
   "include": ["**/*.ts", "**/*.js", "cfxtypes.d.ts"],
