@@ -7,7 +7,10 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "npxbuild": "esbuild modules/index.ts --bundle --outfile=dist/bundle.js --platform=node --target=node16"
+    "npxbuild": "esbuild modules/index.ts --bundle --outfile=dist/bundle.js --platform=node --target=node16",
+    "ui:watch": "npx @tailwindcss/cli -i ./ui/src/input.css -o ./ui/dist/style.css --watch",
+    "ui:build": "npx @tailwindcss/cli -i ./ui/src/input.css -o ./ui/dist/style.css --minify",
+    "tailwind:init": "tailwindcss init"
   },
   "keywords": [],
   "author": "",
@@ -17,10 +20,22 @@
     "@citizenfx/client": "^2.0.27722-1",
     "@citizenfx/server": "^2.0.27722-1",
     "@types/node": "^25.5.2",
+    "autoprefixer": "^10.4.27",
     "dayjs": "^1.11.20",
     "esbuild": "^0.28.0",
     "esbuild-plugin-clean": "^1.0.1",
+    "eslint": "^10.2.0",
+    "postcss": "^8.5.8",
+    "postcss-import": "^16.1.1",
+    "prettier": "^3.8.1",
+    "tailwindcss": "^4.2.2",
     "typescript": "^6.0.2",
     "zod": "^4.3.6"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.2.2",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.7.0",
+    "tailwind-merge": "^3.5.0"
   }
 }
