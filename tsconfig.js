@@ -16,7 +16,7 @@
     "forceConsistentCasingInFileNames": true,
     "paths": {
       // !important ./
-      "@modules/*": ["./modules/*"],
+      "@cfxmodules/*": ["./modules/*"],
       // "@blips/*": ["./modules/blips/*"],
       "@cfxtypes": ["./cfxtypes"],
       "@exception/*": ["./error/*"]
