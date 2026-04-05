@@ -7,5 +7,6 @@
  * // getversion   - Displays current library version
  * // getauthor    - Displays library author information
  * // gta:settime  - Updates the in-game world time
+ * @readonly
  */
 export declare const AddonCommandsList: readonly string[];
