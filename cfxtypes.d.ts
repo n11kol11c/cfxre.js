@@ -10,17 +10,17 @@ export interface CfxjsLibrary {
      * Creates a new instance of a world marker.
      * @param id - Unique identifier for the marker.
      */
-    Marker: (id: string) => import('@modules/markers/markers').CfxMarker;
+    Marker: (id: string) => import('@cfxmodules/markers/markers').CfxMarker;
 
     /**
      * The core marker management system for handling bulk updates and rendering.
      */
-    MarkerSystem: typeof import('@modules/markers/markers').CfxMarkerSystem;
+    MarkerSystem: typeof import('@cfxmodules/markers/markers').CfxMarkerSystem;
 
     /**
      * Authentication and permission handling for marker-related actions.
      */
-    MarkersAuth: typeof import('@modules/markers/markersauth').CfxAuth;
+    MarkersAuth: typeof import('@cfxmodules/markers/markersauth').CfxAuth;
 
     /**
      * Utility for registering client or server console commands.
@@ -30,17 +30,17 @@ export interface CfxjsLibrary {
      * @param restricted - Permission level or restriction flag.
      * @param callback - Function to execute when command is triggered.
      */
-    ConsoleCommand: typeof import('@modules/commands/registercommands').CfxRegisterCommand;
+    ConsoleCommand: typeof import('@cfxmodules/commands/registercommands').CfxRegisterCommand;
 
     /**
      * Map blip management system for creating and tracking icons on the radar.
      */
-    Blips: import('@modules/blips/blips').BlipsModule;
+    Blips: import('@cfxmodules/blips/blips').BlipsModule;
 
     /**
      * Asynchronous utilities, including advanced loops and time formatting.
      */
-    Promise: import('@modules/@syncpromise/promise').CfxPromiseModule;
+    Promise: import('@cfxmodules/@syncpromise/promise').CfxPromiseModule;
 
     /**
      * Current version of the Cfxjs library.
