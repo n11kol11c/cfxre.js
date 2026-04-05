@@ -15,7 +15,7 @@ export const CfxPromise = {
      * @param {import('./promise').LoopCallback} callback - Function to execute. Receives 'stop' to terminate.
      * @returns {Promise<void>}
      */
-    async loop(ms, callback) {
+    async thread(ms, callback) {
         let running = true;
         const stop = () => { running = false; };
         
