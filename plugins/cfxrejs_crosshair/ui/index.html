@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            user-select: none;
+        }
+        #crosshair-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+        .crosshair-dot {
+            width: 4px;
+            height: 4px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div id="crosshair-container">
+        <div class="crosshair-dot"></div>
+    </div>
+
+    <script>
+        window.addEventListener('message', (event) => {
+            if (event.data.type === 'toggleCrosshair') {
+                const display = event.data.display ? 'block' : 'none';
+                document.getElementById('crosshair-container').style.display = display;
+            }
+        });
+    </script>
+</body>
+</html>
